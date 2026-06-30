@@ -1,33 +1,30 @@
 pipeline {
-    agent any // Runs directly on Jenkins without needing Docker daemon access
+    agent any 
 
     stages {
         stage('Clone') {
             steps {
-                echo 'Cloning application repository from GitHub...' [cite: 11]
+                echo 'Cloning application repository from GitHub...'
             }
         }
         
         stage('Build') {
             steps {
-                echo 'Building Application...' [cite: 13]
-                // Simulating a compilation/build step
+                echo 'Building Application...'
                 sh 'echo "MOCK BUILD: Artifacts created successfully."'
             }
         }
         
         stage('Test') {
             steps {
-                echo 'Running automated testing protocols...' [cite: 13]
-                // Simulating unit tests
+                echo 'Running automated testing protocols...'
                 sh 'echo "MOCK TEST: 12/12 unit tests passed successfully."'
             }
         }
         
         stage('Deploy') {
             steps {
-                echo 'Deploying application build...' [cite: 13]
-                // Simulating deployment
+                echo 'Deploying application build...'
                 sh 'echo "MOCK DEPLOY: App deployed successfully!"'
             }
         }
