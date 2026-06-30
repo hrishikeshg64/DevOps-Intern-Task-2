@@ -1,25 +1,34 @@
 pipeline {
-    agent {
-        // This spins up an isolated test environment automatically via the plugin
-        docker { image 'node:18-alpine' }
-    }
+    agent any // Runs directly on Jenkins without needing Docker daemon access
+
     stages {
+        stage('Clone') {
+            steps {
+                echo 'Cloning application repository from GitHub...' [cite: 11]
+            }
+        }
+        
         stage('Build') {
             steps {
-                echo 'Building Application Build...'
-                sh 'node -v' 
+                echo 'Building Application...' [cite: 13]
+                // Simulating a compilation/build step
+                sh 'echo "MOCK BUILD: Artifacts created successfully."'
             }
         }
+        
         stage('Test') {
             steps {
-                echo 'Running automated testing protocols...'
-                sh 'echo "All mock tests passed successfully!"'
+                echo 'Running automated testing protocols...' [cite: 13]
+                // Simulating unit tests
+                sh 'echo "MOCK TEST: 12/12 unit tests passed successfully."'
             }
         }
+        
         stage('Deploy') {
             steps {
-                echo 'Deploying application build...'
-                sh 'echo "App deployed and running perfectly!"'
+                echo 'Deploying application build...' [cite: 13]
+                // Simulating deployment
+                sh 'echo "MOCK DEPLOY: App deployed successfully!"'
             }
         }
     }
