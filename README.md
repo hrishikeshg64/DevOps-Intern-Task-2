@@ -1,24 +1,22 @@
-Project Overview
-This project sets up a basic Continuous Integration and Continuous Deployment (CI/CD) pipeline using Jenkins and Docker. It automates code checkout, builds, tests, and deployment simulation via a Declarative Jenkinsfile.
+# DevOps Internship - Task 2: Simple Jenkins Pipeline for CI/CD
 
-Pipeline Workflow
-The pipeline runs sequentially through these stages:
+## What is this project?
+This project demonstrates how to set up and run a basic Continuous Integration and Continuous Deployment (CI/CD) pipeline using Jenkins. 
 
-Checkout SCM: Connects to GitHub and pulls the latest code.
+Instead of manually running execution commands, the entire workflow is automated through a defined code structure using a Declarative Jenkinsfile.
 
-Build: Simulates compiling code and creating artifacts.
+## Tools Used
+* **Git & GitHub** - For managing code repository hosting and tracking modifications.
+* **Jenkins** - The automation server used to orchestrate the pipeline execution steps.
+* **Docker** - The containerization tool hosting the Jenkins server environment.
 
-Test: Runs mock unit tests to verify stability.
+## How the Pipeline Works (Step-by-Step)
+Every time a manual build is triggered or code changes are fetched, Jenkins runs through a 4-step sequential pipeline:
 
-Deploy: Simulates pushing the working build to production.
+1. **Checkout SCM Phase:** Jenkins connects directly to the GitHub repository and pulls the latest code tracking changes from the main branch.
+2. **Build Phase:** Simulates compiling the source application code and generating package build artifacts.
+3. **Test Phase:** Executes mock unit test automation protocols to ensure build health and stability.
+4. **Deploy Phase:** Simulates the final shipment and hosting deployment of the verified code artifacts to a production target environment.
 
-Successful Build Output
-
-How to Run This
-Run Jenkins inside a Docker container.
-
-Create a new Pipeline job in Jenkins.
-
-Under configuration, set Definition to Pipeline script from SCM, choose Git, and paste your repository URL.
-
-Set the branch specifier to */main and click Build Now.
+## Successful Build Output
+Here is the visual validation showing all phases successfully completing (turning green) within Build #8:
